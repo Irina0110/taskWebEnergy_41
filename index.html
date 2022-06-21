@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/nouislider.min.css"/>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.0/nouislider.min.js" integrity="sha512-1mDhG//LAjM3pLXCJyaA+4c+h5qmMoTc7IuJyuNNPaakrWT9rVTxICK4tIizf7YwJsXgDC2JP74PGCc7qxLAHw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.0/nouislider.min.css" integrity="sha512-qveKnGrvOChbSzAdtSs8p69eoLegyh+1hwOMbmpCViIwj7rn4oJjdmMvWOuyQlTOZgTlZA0N2PXA7iA8/2TUYA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Каталог СИРИУС</title>
+</head>
+<body>
+<div id="page">
+    <header>
+        <img src="img/logo.png" alt="logo">
+        <div class="location">
+            <span>Выберите ваш город</span>
+            <span class="city"><img src="img/location.png" alt="location">Санкт-Петербург</span>
+        </div>
+        <div class="search">
+            <input type="search" placeholder="Поиск">
+            <img src="img/search.png" alt="search">
+        </div>
+        <div class="time">
+            <span>Режим работы:</span>
+            <span>Пн-Пт с 8:00 — 18:00</span>
+        </div>
+        <div class="icons">
+            <img src="img/facebook.png" alt="facebook">
+            <img src="img/insta.png" alt="instagram">
+            <img src="img/vk.png" alt="vk">
+        </div>
+        <div class="contacts">
+            <span>г.Москва</span>
+            <span class="contacts-number">+7 (495) 777-2345</span>
+            <a class="feedback" href="#">Заказать звонок</a>
+        </div>
+        <div class="contacts">
+            <span>г. Ногинск</span>
+            <span class="contacts-number">+7 (495) 600-4400</span>
+            <a class="feedback" href="#">Заказать звонок</a>
+        </div>
+    </header>
+    <nav>
+        <div class="navbar">
+            <div class="menu">
+                <div class="catalog">
+                    <img src="img/menu.png" alt="catalog">
+                    <a href="#">Каталог</a>
+                </div>
+                <a href="#">Новости</a>
+                <a href="#">О компании</a>
+                <a href="#">Скидки</a>
+                <a href="#">Доставка и оплата</a>
+                <a href="#">Услуги</a>
+                <a href="#">Дилеры</a>
+                <a href="#">Магазины</a>
+                <a href="#">Контакты</a>
+                <a href="#" class="trueSign">Честный знак</a>
+            </div>
+            <div class="user">
+                <div class="liked"></div>
+                <img src="img/heart.png" alt="like">
+                <img src="img/shopping-cart.png" alt="items">
+                <div class="enter">
+                    <img src="img/user.png" alt="user">
+                    <a href="#">Войти</a>
+                </div>
+            </div>
+            
+        </div>
+    </nav>
+    <div class="route">
+        <span>Каталог товаров > Спецодежда > Спецодежда зимняя </span>
+        <h1>Спецодежда зимняя</h1>
+    </div>
+    <div class="categories">
+            <a href="#">Спецодежда с заключением Минпромторга</a>
+            <a href="#">Костюмы женские</a>
+            <a href="#">Костюмы мужские</a>
+            <a href="#">Костюмы сварщика</a>
+            <a href="#">Жилеты женские</a>
+            <a href="#">Жилеты мужские</a>
+            <a href="#">Брюки</a>
+            <a href="#">Куртки женские</a>
+            <a href="#">Куртки мужские</a>
+            <a href="#">Полукомбинезоны зимние</a>
+            <a href="#" id='openButton'>Показать еще</a>
+        <div id="hiddenCategories" class="hidden">
+            <a href="#">Костюмы сварщика</a>
+            <a href="#">Жилеты женские</a>
+            <a href="#">Жилеты мужские</a>
+            <a href="#" id="hideButton">Свернуть</a>
+        </div>
+    </div>
+    <div class="sort">
+        <select>
+            <option >По умолчанию</option>
+            <option>По популярности</option>
+            <option selected>По возрастанию цены</option>
+            <option>По убыванию цены</option>
+            <option>По новинкам</option>
+            <option>По скидке</option>
+            <option>По алфавиту</option>
+        </select>
+    </div>
+    <div class="main">
+        <div class="filter">
+            <div class="price">
+                <div class="title">
+                    <span>Цена,руб</span>
+                    <img class='hide' data-hide="1" src="img/down-arrow.png" alt="hide">
+                </div>
+                <div class="hidePart">
+                    <div class="inputPrice">
+                        <div>
+                            <p>От</p>
+                            <input type="number" placeholder="86" id="from">
+                        </div>
+                        <div>
+                            <p>До</p>
+                            <input type="number" placeholder="100000" id="to">
+                        </div>
+                    </div>
+                    <div class="range">
+                        <div class="range__slider">
+                            <div id="range"></div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="line" noshade width="100%">
+            </div>
+            <div class="type">
+                <div class="title">
+                    <span>Вид изделия</span>
+                    <img class='hide' data-hide="2" src="img/down-arrow.png" alt="hide">
+                </div>
+                <div class="hidePart">
+                    <div class="listOfTypes">
+                        <input class="custom-checkbox" type="checkbox" id="Брюки">
+                        <label for="Брюки">Брюки</label>
+                        <input class="custom-checkbox" type="checkbox" id="Жилет" disabled>
+                        <label for="Жилет">Жилет</label>
+                        <input class="custom-checkbox" type="checkbox" id="Костюм">
+                        <label for="Костюм">Костюм</label>
+                        <input class="custom-checkbox" type="checkbox" id="Куртка">
+                        <label for="Куртка">Куртка</label>
+                        <input class="custom-checkbox" type="checkbox" id="Полукомбинезон">
+                        <label for="Полукомбинезон">Полукомбинезон</label>
+                    </div>
+                </div>
+                <hr class="line" noshade width="100%">
+            </div>
+            <div class="season">
+                <div class="title">
+                    <span>Сезон</span>
+                    <img class='hide' data-hide="3" src="img/down-arrow.png" alt="hide">
+                </div>
+                <div class="hidePart">
+                    <div class="list">
+                        <input class="custom-checkbox" type="checkbox" id="Winter">
+                        <label for="Winter">Зима</label>
+                    </div>
+                </div>
+                <hr class="line" noshade width="100%">
+            </div>
+            <div class="Brend">
+                <div class="title">
+                    <span>Торговая марка / Бренд</span>
+                    <img class='hide' data-hide="4" src="img/down-arrow.png" alt="hide">
+                </div>
+                <div class="hidePart">
+                    <div class="list">
+                        <input class="custom-checkbox" type="checkbox" id="Sirius">
+                        <label for="Sirius">СИРИУС</label>
+                    </div>
+                </div>
+                <hr class="line" noshade width="100%">
+            </div>
+            <div class="sex">
+                <div class="title">
+                    <span>Пол</span>
+                    <img class='hide' data-hide="5" src="img/down-arrow.png" alt="hide">
+                </div>
+                <div class="hidePart">
+                    <div class="list">
+                        <input class="custom-checkbox" type="checkbox" id="woman">
+                        <label for="woman">Женский</label>
+                        <input class="custom-checkbox" type="checkbox" id="man">
+                        <label for="man">Мужской</label>
+                        <input class="custom-checkbox" type="checkbox" id="unisex">
+                        <label for="unisex">Универсальный</label>
+                    </div>
+                </div>
+                <hr class="line" noshade width="100%">
+            </div>
+            <div class="structure">
+                <div class="title">
+                    <span>Состав</span>
+                    <img class='hide' data-hide="6" src="img/down-arrow.png" alt="hide">
+                </div>
+                <div class="hidePart">
+                    <div class="list">
+                        <input class="custom-checkbox" type="checkbox" id="trousers">
+                        <label for="trousers">Брюки</label>
+                        <input class="custom-checkbox" type="checkbox" id="jacket">
+                        <label for="jacket">Жилет</label>
+                        <input class="custom-checkbox" type="checkbox" id="costume">
+                        <label for="costume">Костюм</label>
+                        <input class="custom-checkbox" type="checkbox" id="coat">
+                        <label for="coat">Куртка</label>
+                        <input class="custom-checkbox" type="checkbox" id="overalls">
+                        <label for="overalls">Полукомбинезон</label>
+                        <input class="custom-checkbox" type="checkbox" id="overalls1">
+                        <label for="overalls1">Полукомбинезон</label>
+                    </div>
+                </div>
+                <hr class="line" noshade width="100%">
+            </div>
+            <div class="material">
+                <div class="title">
+                    <span>Ткань/Материал верха</span>
+                    <img class='hide' data-hide="7" src="img/down-arrow.png" alt="hide">
+                </div>
+                <div class="hidePart">
+                    <div class="list">
+                        <input class="custom-checkbox" type="checkbox" id="trousers1">
+                        <label for="trousers1">Брюки</label>
+                        <input class="custom-checkbox" type="checkbox" id="jacket1">
+                        <label for="jacket1">Жилет</label>
+                        <input class="custom-checkbox" type="checkbox" id="costume1">
+                        <label for="costume1">Костюм</label>
+                        <input class="custom-checkbox" type="checkbox" id="coat1">
+                        <label for="coat1">Куртка</label>
+                        <input class="custom-checkbox" type="checkbox" id="overalls11">
+                        <label for="overalls11">Полукомбинезон</label>
+                    </div>
+                </div>
+                <hr class="line" noshade width="100%">
+            </div>
+            <div class="warm">
+                <div class="title">
+                    <span>Утеплитель</span>
+                    <img class='hide' data-hide="8" src="img/down-arrow.png" alt="hide">
+                </div>
+                <div class="hidePart">
+                    <div class="list">
+                        <input class="custom-checkbox" type="checkbox" id="trousers2">
+                        <label for="trousers2">Брюки</label>
+                        <input class="custom-checkbox" type="checkbox" id="jacket2">
+                        <label for="jacket2">Жилет</label>
+                        <input class="custom-checkbox" type="checkbox" id="costume2">
+                        <label for="costume2">Костюм</label>
+                        <input class="custom-checkbox" type="checkbox" id="coat2">
+                        <label for="coat2">Куртка</label>
+                        <input class="custom-checkbox" type="checkbox" id="overalls2">
+                        <label for="overalls2">Полукомбинезон</label>
+                    </div>
+                </div>
+                <hr class="line" noshade width="100%">
+            </div>
+            <div class="purpose">
+                <div class="title">
+                    <span>Утеплитель</span>
+                    <img class='hide' data-hide="9" src="img/down-arrow.png" alt="hide">
+                </div>
+                <div class="hidePart">
+                    <div class="list">
+                        <input class="custom-checkbox" type="checkbox" id="trousers3">
+                        <label for="trousers3">Брюки</label>
+                        <input class="custom-checkbox" type="checkbox" id="jacket3">
+                        <label for="jacket3">Жилет</label>
+                        <input class="custom-checkbox" type="checkbox" id="costume3">
+                        <label for="costume3">Костюм</label>
+                    </div>
+                </div>
+                <hr class="line" noshade width="100%">
+            </div>
+            <div class="colors">
+                <div class="title">
+                    <span>Цвет</span>
+                    <img class='hide' data-hide="10" src="img/down-arrow.png" alt="hide">
+                </div>
+                <div class="hidePart">
+                    <div class="list">
+                        <input class="custom-checkbox" type="checkbox" id="turquoise">
+                        <label for="turquoise">Бирюзовый</label>
+                        <input class="custom-checkbox" type="checkbox" id="bluet">
+                        <label for="bluet">Васильковый</label>
+                        <input class="custom-checkbox" type="checkbox" id="red">
+                        <label for="red">Красный</label>
+                        <input class="custom-checkbox" type="checkbox" id="lime">
+                        <label for="lime">Лимонный</label>
+                        <input class="custom-checkbox" type="checkbox" id="olive">
+                        <label for="olive">Олива</label>
+                        <input class="custom-checkbox" type="checkbox" id="orange">
+                        <label for="orange">Оранжевый</label>
+                        <input class="custom-checkbox" type="checkbox" id="grey">
+                        <label for="grey">Серый</label>
+                        <input class="custom-checkbox" type="checkbox" id="blue">
+                        <label for="blue">Синий</label>
+                        <input class="custom-checkbox" type="checkbox" id="blackRed">
+                        <label for="blackRed">Черный, красный</label>
+                        <input class="custom-checkbox" type="checkbox" id="black">
+                        <label for="black">Черный</label>
+                    </div>
+                </div>
+                <hr class="line" noshade width="100%">
+            </div>
+            <div class="show">
+                <span>Показать (123)</span>
+            </div>
+            <div class="reset" id="reset">
+                <span>Сбросить</span>
+            </div>
+        </div>
+        <div class="cards" id="cards">
+        </div>
+        <button type="button" class="showMore">Показать еще</button>
+        <div class="pages">
+            <img src="img/down-arrow.png" class="left">
+            <a href="#" style="background-color:#E93C3C; color: white">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#" class="lastPage">4</a>
+            <a href="#" class="allPages">Все</a>
+            <img src="img/down-arrow.png" class="right">
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="fistColomnFooter">
+                <span>+7 (495) 777-2345</span>
+                <a href="#">Заказать звонок</a>
+                <p>info@planeta-sirius.ru</p>
+                <div class="icons">
+                    <img src="img/facebook.png" alt="facebook">
+                    <img src="img/insta.png" alt="instagram">
+                    <img src="img/vk.png" alt="vk">
+                </div>
+                <div class="downloadPrice">
+                    <img src="img/excel.png">
+                    <a href="#">Скачать прайс-лист</a>
+                </div>
+            </div>
+            <div class="secondColomnFooter">
+                <a href='href' class="footerLink">Каталог</a>
+                <a href='href' class="footerLink">СПЕЦОДЕЖДА</a>
+                <a href='href' class="footerLink">Средства защиты рук</a>
+                <a href='href' class="footerLink">Активный отдых</a>
+                <a href='href' class="footerLink">Хозтовары и постельные принадлежности</a>
+                <a href='href' class="footerLinkRed">Ликвидация</a>
+            </div>
+            <div class="thirdColomnFooter">
+                <a href='href' class="footerLink">обувь</a>
+                <a href='href' class="footerLink">Средства индивидуальной защиты</a>
+                <a href='href' class="footerLink">жилеты на все случаи жизни</a>
+                <a href='href' class="footerLink">Активный отдых</a>
+                <a href='href' class="footerLink">линия Plus</a>
+            </div>
+            <div class="fourthColomnFooter">
+                <p>Подпишитесь на новости и акции и будьте в курсе всего!</p>
+                <div class="email">
+                    <input type="email" placeholder="Введите свой e-mail">
+                    <img src="img/send.png">
+                </div>
+                <div class="argee">
+                    <input type="checkbox" id="send">
+                    <label for="send">Я даю согласие на обработку персональных данных и соглашаюсь с правилами обработки персональных данных.</label>
+                </div>
+            </div>
+        </div>
+        <div class="info">
+            <span>2021 © PLANETA-SIRIUS.RU</span>
+            <p>Вся приведенная на сайте информация, носят исключительно ознакомительный характер и не является публичной офертой.</p>
+        </div>
+    </footer>
+</div>
+
+<script src="js/nouislider.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

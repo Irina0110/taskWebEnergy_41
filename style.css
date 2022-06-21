@@ -1,0 +1,696 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body {
+  margin: 0;
+}
+
+#page {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  color: #828282;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  grid-column: 2/3;
+  height: 80px;
+  align-items: center;
+}
+header .location, header .time, header .contacts {
+  display: flex;
+  flex-direction: column;
+}
+header img {
+  height: 80px;
+  width: 95px;
+}
+header .location .city {
+  color: #E93C3C;
+  font-size: 14px;
+}
+header .location .city img {
+  height: 14.67px;
+  width: 12px;
+}
+header .search {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  width: 372px;
+  border: 1px solid #828282;
+}
+header .search img {
+  margin-top: 10px;
+  padding-right: 15px;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+}
+header .search input {
+  height: 34px;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+header .icons {
+  display: flex;
+  justify-content: center;
+}
+header .icons img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+header .contacts .contacts-number {
+  font-weight: bold;
+}
+header .contacts .feedback {
+  text-decoration: none;
+  color: #EB4747;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  grid-column: 1/4;
+  background-color: #F2F2F2;
+}
+nav .navbar {
+  font-size: 14px;
+  display: flex;
+  grid-column: 2/3;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .navbar .menu {
+  display: flex;
+  justify-content: space-between;
+}
+nav .navbar .menu a:hover, nav .navbar .menu a:active {
+  border-bottom: 2px solid #E93C3C;
+}
+nav .navbar .user {
+  display: flex;
+  flex-direction: row;
+}
+nav .navbar .user a {
+  color: #E93C3C;
+  padding: 0;
+}
+nav .navbar .user img {
+  margin-right: 20px;
+  object-fit: contain;
+}
+nav .navbar .user .enter img {
+  margin-right: 10px;
+}
+nav .navbar .user .liked .iconShop, nav .navbar .user .shop .iconShop {
+  width: 28px;
+  background-size: 67px;
+  position: relative;
+  background-position: 0 center;
+}
+nav .navbar .user .liked .count, nav .navbar .user .shop .count {
+  font-size: 10px;
+  line-height: 13px;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  min-width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #f55123;
+  padding: 2px 3px 1px;
+  border-radius: 16px;
+}
+nav .navbar .catalog {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #EB4747;
+  color: white;
+  height: 100%;
+}
+nav .navbar .catalog a {
+  color: white;
+}
+nav .navbar .catalog img {
+  margin-left: 12px;
+  margin-top: 5px;
+  width: 18px;
+  height: 18px;
+}
+nav .navbar a {
+  color: #828282;
+  text-decoration: none;
+  padding: 15px 12px;
+}
+nav .navbar .trueSign {
+  color: #EB4747;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.route {
+  margin-top: 40px;
+  grid-column: 2/3;
+  color: #828282;
+}
+.route h1 {
+  color: #25282B;
+  text-transform: uppercase;
+}
+
+.categories {
+  grid-column: 2/3;
+  display: flex;
+  flex-wrap: wrap;
+}
+.categories a {
+  text-decoration: none;
+  color: #52575C;
+  padding: 8.5px 8px;
+  border: 1px solid #CACCCF;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+.categories a:hover {
+  background-color: #E93C3C;
+  color: white;
+}
+.categories .hidden {
+  display: none !important;
+}
+.categories #hiddenCategories {
+  display: flex;
+  flex-wrap: wrap;
+}
+.categories #hideButton, .categories #openButton {
+  border: 1px solid #E93C3C;
+}
+.categories #hideButton:hover, .categories #openButton:hover {
+  color: #E93C3C;
+  background-color: white;
+}
+
+.sort {
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.sort select {
+  outline: none;
+  border: none;
+  height: 28px;
+  width: 187px;
+  font-size: 14px;
+}
+.sort select option {
+  outline: none;
+  border: none;
+}
+
+.main {
+  grid-column: 2/3;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.main .filter {
+  height: max-content;
+  background: #F9F9FA;
+  border: 1px solid #E8E8E8;
+  padding: 20px;
+}
+.main .filter hr {
+  width: 100%;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: #E8E8E8;
+  margin-top: 15px;
+}
+.main .filter .hideFilter {
+  display: none !important;
+}
+.main .filter .price .title, .main .filter .type .title, .main .filter .season .title, .main .filter .Brend .title, .main .filter .sex .title,
+.main .filter .structure .title, .main .filter .material .title, .main .filter .warm .title, .main .filter .purpose .title,
+.main .filter .colors .title {
+  margin-top: 13px;
+  display: flex;
+  justify-content: space-between;
+}
+.main .filter .price .title img, .main .filter .type .title img, .main .filter .season .title img, .main .filter .Brend .title img, .main .filter .sex .title img,
+.main .filter .structure .title img, .main .filter .material .title img, .main .filter .warm .title img, .main .filter .purpose .title img,
+.main .filter .colors .title img {
+  width: 12px;
+  height: 6px;
+}
+.main .filter .price span, .main .filter .type span, .main .filter .season span, .main .filter .Brend span, .main .filter .sex span,
+.main .filter .structure span, .main .filter .material span, .main .filter .warm span, .main .filter .purpose span,
+.main .filter .colors span {
+  font-size: 16px;
+  color: #25282B;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+.main .filter .price {
+  display: flex;
+  flex-direction: column;
+}
+.main .filter .price input {
+  box-sizing: border-box;
+  width: 92px;
+  text-align: right;
+}
+.main .filter .price input::-webkit-outer-spin-button,
+.main .filter .price input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.main .filter .price p {
+  position: absolute;
+  color: black;
+  margin-top: 4px;
+  margin-left: 5px;
+}
+.main .filter .price .inputPrice {
+  display: flex;
+  justify-content: space-between;
+}
+.main .filter .price .range {
+  margin-bottom: 15px;
+}
+.main .filter .price .range .noUi-target {
+  background: #CACCCF;
+  height: 4px;
+  margin-top: 33px;
+}
+.main .filter .price .range .noUi-connect {
+  background: #FF6262;
+  height: 4px;
+}
+.main .filter .price .range .noUi-handle {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50%;
+  background: #FF6262;
+}
+.main .filter .price .range .noUi-horizontal .noUi-handle {
+  top: -9px;
+}
+.main .filter .price .range .noUi-handle:before,
+.main .filter .price .range .noUi-handle:after {
+  background: none;
+  content: "•";
+  font-size: 43px;
+  font-weight: 700;
+  left: 3px;
+  color: white;
+  line-height: 12px;
+  position: absolute;
+}
+.main .filter .type .hidePart .listOfTypes, .main .filter .type .hidePart .list, .main .filter .season .hidePart .listOfTypes, .main .filter .season .hidePart .list, .main .filter .Brend .hidePart .listOfTypes, .main .filter .Brend .hidePart .list, .main .filter .sex .hidePart .listOfTypes, .main .filter .sex .hidePart .list, .main .filter .structure .hidePart .listOfTypes, .main .filter .structure .hidePart .list,
+.main .filter .material .hidePart .listOfTypes,
+.main .filter .material .hidePart .list, .main .filter .warm .hidePart .listOfTypes, .main .filter .warm .hidePart .list, .main .filter .purpose .hidePart .listOfTypes, .main .filter .purpose .hidePart .list, .main .filter .colors .hidePart .listOfTypes, .main .filter .colors .hidePart .list {
+  display: flex;
+  flex-direction: column;
+}
+.main .filter .type .hidePart .listOfTypes label, .main .filter .type .hidePart .list label, .main .filter .season .hidePart .listOfTypes label, .main .filter .season .hidePart .list label, .main .filter .Brend .hidePart .listOfTypes label, .main .filter .Brend .hidePart .list label, .main .filter .sex .hidePart .listOfTypes label, .main .filter .sex .hidePart .list label, .main .filter .structure .hidePart .listOfTypes label, .main .filter .structure .hidePart .list label,
+.main .filter .material .hidePart .listOfTypes label,
+.main .filter .material .hidePart .list label, .main .filter .warm .hidePart .listOfTypes label, .main .filter .warm .hidePart .list label, .main .filter .purpose .hidePart .listOfTypes label, .main .filter .purpose .hidePart .list label, .main .filter .colors .hidePart .listOfTypes label, .main .filter .colors .hidePart .list label {
+  font-size: 16px;
+  color: #52575C;
+  margin-bottom: 15px;
+}
+.main .filter .type .hidePart .listOfTypes .custom-checkbox, .main .filter .type .hidePart .list .custom-checkbox, .main .filter .season .hidePart .listOfTypes .custom-checkbox, .main .filter .season .hidePart .list .custom-checkbox, .main .filter .Brend .hidePart .listOfTypes .custom-checkbox, .main .filter .Brend .hidePart .list .custom-checkbox, .main .filter .sex .hidePart .listOfTypes .custom-checkbox, .main .filter .sex .hidePart .list .custom-checkbox, .main .filter .structure .hidePart .listOfTypes .custom-checkbox, .main .filter .structure .hidePart .list .custom-checkbox,
+.main .filter .material .hidePart .listOfTypes .custom-checkbox,
+.main .filter .material .hidePart .list .custom-checkbox, .main .filter .warm .hidePart .listOfTypes .custom-checkbox, .main .filter .warm .hidePart .list .custom-checkbox, .main .filter .purpose .hidePart .listOfTypes .custom-checkbox, .main .filter .purpose .hidePart .list .custom-checkbox, .main .filter .colors .hidePart .listOfTypes .custom-checkbox, .main .filter .colors .hidePart .list .custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.main .filter .type .hidePart .listOfTypes .custom-checkbox + label, .main .filter .type .hidePart .list .custom-checkbox + label, .main .filter .season .hidePart .listOfTypes .custom-checkbox + label, .main .filter .season .hidePart .list .custom-checkbox + label, .main .filter .Brend .hidePart .listOfTypes .custom-checkbox + label, .main .filter .Brend .hidePart .list .custom-checkbox + label, .main .filter .sex .hidePart .listOfTypes .custom-checkbox + label, .main .filter .sex .hidePart .list .custom-checkbox + label, .main .filter .structure .hidePart .listOfTypes .custom-checkbox + label, .main .filter .structure .hidePart .list .custom-checkbox + label,
+.main .filter .material .hidePart .listOfTypes .custom-checkbox + label,
+.main .filter .material .hidePart .list .custom-checkbox + label, .main .filter .warm .hidePart .listOfTypes .custom-checkbox + label, .main .filter .warm .hidePart .list .custom-checkbox + label, .main .filter .purpose .hidePart .listOfTypes .custom-checkbox + label, .main .filter .purpose .hidePart .list .custom-checkbox + label, .main .filter .colors .hidePart .listOfTypes .custom-checkbox + label, .main .filter .colors .hidePart .list .custom-checkbox + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+.main .filter .type .hidePart .listOfTypes .custom-checkbox + label::before, .main .filter .type .hidePart .list .custom-checkbox + label::before, .main .filter .season .hidePart .listOfTypes .custom-checkbox + label::before, .main .filter .season .hidePart .list .custom-checkbox + label::before, .main .filter .Brend .hidePart .listOfTypes .custom-checkbox + label::before, .main .filter .Brend .hidePart .list .custom-checkbox + label::before, .main .filter .sex .hidePart .listOfTypes .custom-checkbox + label::before, .main .filter .sex .hidePart .list .custom-checkbox + label::before, .main .filter .structure .hidePart .listOfTypes .custom-checkbox + label::before, .main .filter .structure .hidePart .list .custom-checkbox + label::before,
+.main .filter .material .hidePart .listOfTypes .custom-checkbox + label::before,
+.main .filter .material .hidePart .list .custom-checkbox + label::before, .main .filter .warm .hidePart .listOfTypes .custom-checkbox + label::before, .main .filter .warm .hidePart .list .custom-checkbox + label::before, .main .filter .purpose .hidePart .listOfTypes .custom-checkbox + label::before, .main .filter .purpose .hidePart .list .custom-checkbox + label::before, .main .filter .colors .hidePart .listOfTypes .custom-checkbox + label::before, .main .filter .colors .hidePart .list .custom-checkbox + label::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #CACCCF;
+  border-radius: 0.25em;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+.main .filter .type .hidePart .listOfTypes .custom-checkbox:checked + label::before, .main .filter .type .hidePart .list .custom-checkbox:checked + label::before, .main .filter .season .hidePart .listOfTypes .custom-checkbox:checked + label::before, .main .filter .season .hidePart .list .custom-checkbox:checked + label::before, .main .filter .Brend .hidePart .listOfTypes .custom-checkbox:checked + label::before, .main .filter .Brend .hidePart .list .custom-checkbox:checked + label::before, .main .filter .sex .hidePart .listOfTypes .custom-checkbox:checked + label::before, .main .filter .sex .hidePart .list .custom-checkbox:checked + label::before, .main .filter .structure .hidePart .listOfTypes .custom-checkbox:checked + label::before, .main .filter .structure .hidePart .list .custom-checkbox:checked + label::before,
+.main .filter .material .hidePart .listOfTypes .custom-checkbox:checked + label::before,
+.main .filter .material .hidePart .list .custom-checkbox:checked + label::before, .main .filter .warm .hidePart .listOfTypes .custom-checkbox:checked + label::before, .main .filter .warm .hidePart .list .custom-checkbox:checked + label::before, .main .filter .purpose .hidePart .listOfTypes .custom-checkbox:checked + label::before, .main .filter .purpose .hidePart .list .custom-checkbox:checked + label::before, .main .filter .colors .hidePart .listOfTypes .custom-checkbox:checked + label::before, .main .filter .colors .hidePart .list .custom-checkbox:checked + label::before {
+  border-color: #CACCCF;
+  background-color: #E93C3C;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+.main .filter .type .hidePart .listOfTypes .custom-checkbox:disabled + label, .main .filter .type .hidePart .list .custom-checkbox:disabled + label, .main .filter .season .hidePart .listOfTypes .custom-checkbox:disabled + label, .main .filter .season .hidePart .list .custom-checkbox:disabled + label, .main .filter .Brend .hidePart .listOfTypes .custom-checkbox:disabled + label, .main .filter .Brend .hidePart .list .custom-checkbox:disabled + label, .main .filter .sex .hidePart .listOfTypes .custom-checkbox:disabled + label, .main .filter .sex .hidePart .list .custom-checkbox:disabled + label, .main .filter .structure .hidePart .listOfTypes .custom-checkbox:disabled + label, .main .filter .structure .hidePart .list .custom-checkbox:disabled + label,
+.main .filter .material .hidePart .listOfTypes .custom-checkbox:disabled + label,
+.main .filter .material .hidePart .list .custom-checkbox:disabled + label, .main .filter .warm .hidePart .listOfTypes .custom-checkbox:disabled + label, .main .filter .warm .hidePart .list .custom-checkbox:disabled + label, .main .filter .purpose .hidePart .listOfTypes .custom-checkbox:disabled + label, .main .filter .purpose .hidePart .list .custom-checkbox:disabled + label, .main .filter .colors .hidePart .listOfTypes .custom-checkbox:disabled + label, .main .filter .colors .hidePart .list .custom-checkbox:disabled + label {
+  color: #A0A4A8 !important;
+  border-color: #E8E8E8;
+}
+.main .show {
+  border: 2px solid #E93C3C;
+  background-color: #F9F9FA;
+  height: 48px;
+}
+.main .show span {
+  font-weight: 600;
+}
+.main .reset {
+  margin-bottom: 100px;
+}
+.main .reset span {
+  font-weight: 400;
+  margin-top: 16px;
+}
+.main .reset, .main .show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main .reset span, .main .show span {
+  font-size: 16px;
+  color: #E93C3C;
+}
+.main .showMore {
+  grid-column: 2/6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 60px;
+  background: #F9F9FA;
+  border: 1px solid #E8E8E8;
+  font-weight: 400;
+  font-size: 16px;
+}
+.main .left, .main .right {
+  width: 12px;
+  height: 6px;
+}
+.main .left {
+  transform: rotate(-90deg);
+  margin-right: 31px;
+}
+.main .right {
+  transform: rotate(90deg);
+  margin-left: 31px;
+}
+.main .pages {
+  margin-top: 32px;
+  margin-bottom: 201px;
+  grid-column: 2/6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .pages .lastPage {
+  color: #A0A4A8;
+}
+.main .pages .allPages {
+  color: #E93C3C;
+}
+.main .pages a {
+  color: #25282B;
+  text-decoration: none;
+  padding: 2px 8px;
+  font-size: 16px;
+}
+.main .pages a:hover + a:active {
+  background-color: #E93C3C;
+  color: white;
+}
+.main .cards {
+  grid-column: 2/6;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.main .cards .card {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  border: 1px solid #E8E8E8;
+}
+.main .cards .card img {
+  max-width: 216px;
+  max-height: 438px;
+}
+.main .cards .card .description {
+  color: #25282B;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+.main .cards .card .optPrice {
+  color: #1A8BFF;
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+.main .cards .card .roznPrice {
+  color: #E93C3C;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+.main .cards .card .action {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.main .cards .card .action .add {
+  display: flex;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #A0A4A8;
+}
+.main .cards .card .action .add span {
+  color: #52575C;
+  font-size: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.main .cards .card .action .add:hover {
+  background-color: #E93C3C;
+}
+.main .cards .card .action .add:hover span {
+  color: white;
+}
+.main .cards .card .action .like {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  border: 1px solid #A0A4A8;
+}
+.main .cards .card .action .like:hover {
+  background-color: #E93C3C;
+  color: white;
+}
+.main .cards .card .action .like:before {
+  content: "♡";
+  font-size: 30px;
+  font-weight: 100;
+}
+.main .cards .hideSize {
+  display: none;
+}
+.main .cards .size {
+  font-weight: 500;
+  color: #25282B;
+}
+.main .cards .size .secondLineSize, .main .cards .size .firstLineOfSize {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.main .cards .size .secondLineSize img, .main .cards .size .firstLineOfSize img {
+  width: 20px;
+  height: 20px;
+}
+.main .cards .size .secondLineSize {
+  margin-bottom: 15px;
+}
+.main .cards .size .chooseOption {
+  font-size: 20px;
+}
+.main .cards .size .titleSize {
+  font-size: 14px;
+}
+.main .cards .size .listOfSizes {
+  display: flex;
+  flex-direction: column;
+}
+.main .cards .size .listOfSizes .sizeType {
+  display: grid;
+  grid-template-columns: 3fr 1fr 2fr;
+  align-items: center;
+}
+.main .cards .size .listOfSizes .sizeType input {
+  grid-column: 2/3;
+  height: 34px;
+  width: 70%;
+  text-align: center;
+}
+.main .cards .size .listOfSizes .sizeType input::-webkit-outer-spin-button,
+.main .cards .size .listOfSizes .sizeType input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.main .cards .size .listOfSizes .sizeType .btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.main .cards .size .listOfSizes .sizeType .plus, .main .cards .size .listOfSizes .sizeType .minus {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  width: 34px;
+  height: 34px;
+  font-size: 20px;
+  color: white;
+  background-color: #E93C3C;
+}
+.main .card:hover {
+  box-shadow: 0 0 20px rgba(37, 40, 43, 0.2);
+}
+
+footer {
+  background-color: #F9F9FA;
+  display: grid;
+  grid-column: 1/4;
+  grid-template-columns: 10% 80% 10%;
+  border: 1px solid #E8E8E8;
+  grid-template-rows: 2fr 1fr;
+}
+
+.footer {
+  height: 277px;
+  margin-top: 52px;
+  display: grid;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+}
+.footer .fistColomnFooter, .footer .secondColomnFooter, .footer .thirdColomnFooter, .footer .fourthColomnFooter {
+  display: flex;
+  flex-direction: column;
+}
+.footer .fistColomnFooter span {
+  color: #52575C;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+.footer .fistColomnFooter a {
+  color: #EB4747;
+  text-decoration: none;
+  margin-bottom: 21px;
+}
+.footer .fistColomnFooter .icons {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 32px;
+}
+.footer .fistColomnFooter .icons img {
+  margin-right: 10px;
+}
+.footer .fistColomnFooter .downloadPrice {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.footer .fistColomnFooter .downloadPrice a {
+  margin-bottom: 0;
+  margin-left: 10px;
+}
+.footer .secondColomnFooter .footerLink, .footer .secondColomnFooter .footerLinkRed, .footer .thirdColomnFooter .footerLink, .footer .thirdColomnFooter .footerLinkRed {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+.footer .secondColomnFooter .footerLink, .footer .thirdColomnFooter .footerLink {
+  color: #A0A4A8;
+}
+.footer .secondColomnFooter .footerLinkRed, .footer .thirdColomnFooter .footerLinkRed {
+  color: #E93C3C;
+}
+.footer .fourthColomnFooter p {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #52575C;
+}
+.footer .fourthColomnFooter .email {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  border: 1px solid #E8E8E8;
+  margin-bottom: 20px;
+}
+.footer .fourthColomnFooter .email img {
+  margin-top: 10px;
+  padding-right: 15px;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+}
+.footer .fourthColomnFooter .email input {
+  height: 34px;
+  width: 100%;
+  outline: none;
+  border: none;
+}
+.footer .fourthColomnFooter .argee {
+  display: flex;
+  flex-direction: row;
+}
+
+.info {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.info span {
+  color: black;
+  height: max-content;
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.info p {
+  margin-top: 0;
+  margin-bottom: 38px;
+}
+
+/*# sourceMappingURL=style.css.map */
