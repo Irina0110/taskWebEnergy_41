@@ -44,31 +44,37 @@
     </header>
     <nav>
         <div class="navbar">
-            <div class="catalog">
-                <img src="img/menu.png" alt="catalog">
-                <a href="#">Каталог</a>
-            </div>
-            <div class="menu">
-                <a href="#">Новости</a>
-                <a href="#">О компании</a>
-                <a href="#">Скидки</a>
-                <a href="#">Доставка и оплата</a>
-                <a href="#">Услуги</a>
-                <a href="#">Дилеры</a>
-                <a href="#">Магазины</a>
-                <a href="#">Контакты</a>
-                <a href="#" class="trueSign">Честный знак</a>
+            <div class="menuLeft">
+                <div class="catalog">
+                    <img src="img/menu.png" alt="catalog">
+                    <a href="#">Каталог</a>
+                </div>
+                <div class="menu">
+                    <a href="#">Новости</a>
+                    <a href="#">О компании</a>
+                    <a href="#">Скидки</a>
+                    <a href="#">Доставка и оплата</a>
+                    <a href="#">Услуги</a>
+                    <a href="#">Дилеры</a>
+                    <a href="#">Магазины</a>
+                    <a href="#">Контакты</a>
+                    <a href="#" class="trueSign">Честный знак</a>
+                </div>
             </div>
             <div class="user">
-                <div class="liked"></div>
-                <img src="img/heart.png" alt="like">
-                <img src="img/shopping-cart.png" alt="items">
+                <div class="liked">
+                    <img id="like" src="img/heart.png" alt="like">
+                    <span class="counts">0</span>
+                </div>
+                <div class="liked">
+                    <img id="shop" src="img/shopping-cart.png" alt="items">
+                    <span class="counts">0</span>
+                </div>
                 <div class="enter">
                     <img src="img/user.png" alt="user">
                     <a href="#">Войти</a>
                 </div>
             </div>
-            
         </div>
     </nav>
     <div class="route">
@@ -338,7 +344,7 @@
                 <span>+7 (495) 777-2345</span>
                 <a href="#">Заказать звонок</a>
                 <p>info@planeta-sirius.ru</p>
-                <div class="icons">
+                <div class="iconsFooter">
                     <img src="img/facebook.png" alt="facebook">
                     <img src="img/insta.png" alt="instagram">
                     <img src="img/vk.png" alt="vk">

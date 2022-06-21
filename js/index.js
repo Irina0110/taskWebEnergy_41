@@ -10,8 +10,8 @@ for (let elem of hideFilterButton){
     elem.addEventListener('click', hideFilter);
 }
 function filter(event){
-    document.getElementById('filter').classList.toggle('filterClose');
-    document.getElementById('cards').classList.toggle('cardsClose');
+        document.getElementById('filter').classList.toggle('filterClose');
+        document.getElementById('cards').classList.toggle('cardsClose');
 }
 function chooseSize(event){
     let size = document.getElementsByClassName('size');
