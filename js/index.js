@@ -3,12 +3,16 @@
 document.getElementById('openButton').addEventListener('click', open);
 document.getElementById('hideButton').addEventListener('click', hide);
 document.getElementById('reset').addEventListener('click', reset);
-
+document.getElementById('filterButton').addEventListener('click', filter);
+document.getElementById('hideFilter').addEventListener('click', filter);
 let hideFilterButton = document.getElementsByClassName('hide');
 for (let elem of hideFilterButton){
     elem.addEventListener('click', hideFilter);
 }
-
+function filter(event){
+    document.getElementById('filter').classList.toggle('filterClose');
+    document.getElementById('cards').classList.toggle('cardsClose');
+}
 function chooseSize(event){
     let size = document.getElementsByClassName('size');
     for (let i = 0; i < size.length; i++){
@@ -81,7 +85,9 @@ let cards = document.getElementById('cards');
 for( let i = 0; i<20; i++){
     let card = document.createElement('div');
     card.innerHTML = ` 
-                <img src="img/example.jpg" alt="example">
+                 <div class="image">
+                  <img src="img/example.jpg" alt="example">
+                </div>
                 <p>Арт 1232425</p>
                 <span class="description">Костюм "СИРИУС-Горка" куртка, брюки (гражданские размеры) КМФ Мультикам</span>
                 <span class="optPrice">Опт 3144 ₽</span>

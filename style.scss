@@ -194,6 +194,11 @@ nav{
   grid-column: 2/3;
   display: flex;
   flex-direction: row-reverse;
+  justify-content: space-between;
+  span{
+    font-size: 16px;
+    color: $black;
+  }
   select{
     outline: none;
     border: none;
@@ -206,6 +211,12 @@ nav{
     }
   }
 }
+.filterClose{
+  display: block !important;
+}
+.cardsClose{
+  display: block !important;
+}
 .main{
   grid-column: 2/3;
   display: grid;
@@ -215,6 +226,10 @@ nav{
     background: $backgroundFilter;
     border: 1px solid $lightGrey;
     padding: 20px;
+    .closeFilter{
+      display: flex;
+      flex-direction: row-reverse;
+    }
     hr{
       width: 100%;
       border-style: solid;
@@ -431,7 +446,12 @@ nav{
       padding: 20px;
       flex-direction: column;
       border: 1px solid $lightGrey;
+      .image{
+        display: flex;
+        justify-content: center;
+      }
       img{
+        justify-self: center;
         max-width: 216px;
         max-height: 438px;
       }
@@ -569,7 +589,7 @@ footer{
   grid-template-rows: 2fr 1fr;
 }
 .footer{
-  height: 277px;
+  height: max-content;
   margin-top: 52px;
   display: grid;
   grid-column: 2/3;
@@ -674,5 +694,45 @@ footer{
   p{
     margin-top: 0;
     margin-bottom: 38px;
+  }
+}
+
+@media (min-width: 1200px) {
+.cards{
+  grid-template-columns: repeat(3, 1fr) !important;
+  }
+  #filterButton{
+    display: none !important;
+  }
+}
+@media (min-width: 800px) and (max-width: 1199px) {
+  .location, .search, .time, .icons, .contacts, .menu{
+    display: none !important;
+  }
+  .cards{
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  #filterButton{
+    display: none !important;
+  }
+}
+@media (max-width: 799px){
+  .location, .search, .time, .icons, .contacts, .menu{
+    display: none !important;
+  }
+  .cards{
+    grid-column: 1/6 !important;
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .filter{
+    display: none ;
+  }
+  #filterButton{
+    display: block !important;
+  }
+  .footer, footer, .info{
+    display: flex !important;
+    flex-direction: column !important;
+
   }
 }

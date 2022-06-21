@@ -107,29 +107,6 @@ nav .navbar .user img {
 nav .navbar .user .enter img {
   margin-right: 10px;
 }
-nav .navbar .user .liked .iconShop, nav .navbar .user .shop .iconShop {
-  width: 28px;
-  background-size: 67px;
-  position: relative;
-  background-position: 0 center;
-}
-nav .navbar .user .liked .count, nav .navbar .user .shop .count {
-  font-size: 10px;
-  line-height: 13px;
-  text-transform: uppercase;
-  color: #fff;
-  text-align: center;
-  display: inline-block;
-  min-width: 16px;
-  height: 16px;
-  box-sizing: border-box;
-  position: absolute;
-  top: -6px;
-  right: -8px;
-  background: #f55123;
-  padding: 2px 3px 1px;
-  border-radius: 16px;
-}
 nav .navbar .catalog {
   display: flex;
   flex-direction: row;
@@ -204,6 +181,11 @@ nav .navbar .trueSign {
   grid-column: 2/3;
   display: flex;
   flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.sort span {
+  font-size: 16px;
+  color: #25282B;
 }
 .sort select {
   outline: none;
@@ -217,6 +199,14 @@ nav .navbar .trueSign {
   border: none;
 }
 
+.filterClose {
+  display: block !important;
+}
+
+.cardsClose {
+  display: block !important;
+}
+
 .main {
   grid-column: 2/3;
   display: grid;
@@ -227,6 +217,10 @@ nav .navbar .trueSign {
   background: #F9F9FA;
   border: 1px solid #E8E8E8;
   padding: 20px;
+}
+.main .filter .closeFilter {
+  display: flex;
+  flex-direction: row-reverse;
 }
 .main .filter hr {
   width: 100%;
@@ -454,7 +448,12 @@ nav .navbar .trueSign {
   flex-direction: column;
   border: 1px solid #E8E8E8;
 }
+.main .cards .card .image {
+  display: flex;
+  justify-content: center;
+}
 .main .cards .card img {
+  justify-self: center;
   max-width: 216px;
   max-height: 438px;
 }
@@ -590,7 +589,7 @@ footer {
 }
 
 .footer {
-  height: 277px;
+  height: max-content;
   margin-top: 52px;
   display: grid;
   grid-column: 2/3;
@@ -691,6 +690,52 @@ footer {
 .info p {
   margin-top: 0;
   margin-bottom: 38px;
+}
+
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  #filterButton {
+    display: none !important;
+  }
+}
+@media (min-width: 800px) and (max-width: 1199px) {
+  .location, .search, .time, .icons, .contacts, .menu {
+    display: none !important;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  #filterButton {
+    display: none !important;
+  }
+}
+@media (max-width: 799px) {
+  .location, .search, .time, .icons, .contacts, .menu {
+    display: none !important;
+  }
+
+  .cards {
+    grid-column: 1/6 !important;
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+
+  .filter {
+    display: none;
+  }
+
+  #filterButton {
+    display: block !important;
+  }
+
+  .footer, footer, .info {
+    display: flex !important;
+    flex-direction: column !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
