@@ -139,6 +139,7 @@ nav .navbar .menu {
   justify-content: space-between;
 }
 nav .navbar .menu a:hover, nav .navbar .menu a:active {
+  padding-bottom: 13px;
   border-bottom: 2px solid #E93C3C;
 }
 nav .navbar .user {
@@ -246,6 +247,7 @@ nav .navbar .trueSign {
 .categories a:hover {
   background-color: #E93C3C;
   color: white;
+  cursor: pointer;
 }
 .categories .hidden {
   display: none !important;

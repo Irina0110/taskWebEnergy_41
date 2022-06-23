@@ -135,6 +135,7 @@ nav{
       -ms-flex-pack: justify;
       justify-content: space-between;
       a:hover, a:active{
+        padding-bottom: 13px;
         border-bottom: 2px solid $redColorHead;
       }
     }
@@ -258,6 +259,7 @@ nav{
   a:hover{
     background-color: $redColorHead;
     color: white;
+    cursor: pointer;
   }
   .hidden{
     display: none !important;
