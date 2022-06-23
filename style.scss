@@ -135,7 +135,7 @@ nav{
       -ms-flex-pack: justify;
       justify-content: space-between;
       a:hover, a:active{
-        padding-bottom: 13px;
+        padding-bottom: 13px !important;
         border-bottom: 2px solid $redColorHead;
       }
     }
