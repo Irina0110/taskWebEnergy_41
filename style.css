@@ -139,7 +139,7 @@ nav .navbar .menu {
   justify-content: space-between;
 }
 nav .navbar .menu a:hover, nav .navbar .menu a:active {
-  padding-bottom: 13px;
+  padding-bottom: 13px !important;
   border-bottom: 2px solid #E93C3C;
 }
 nav .navbar .user {
