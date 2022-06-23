@@ -685,6 +685,7 @@ nav .navbar .trueSign {
 }
 .main .cards .card .action .add:hover {
   background-color: #E93C3C;
+  cursor: pointer;
 }
 .main .cards .card .action .add:hover span {
   color: white;
@@ -705,6 +706,7 @@ nav .navbar .trueSign {
 .main .cards .card .action .like:hover {
   background-color: #E93C3C;
   color: white;
+  cursor: pointer;
 }
 .main .cards .card .action .like:before {
   content: "♡";

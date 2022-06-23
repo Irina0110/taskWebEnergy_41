@@ -681,6 +681,7 @@ nav{
         }
         .add:hover{
           background-color: $redColorHead;
+          cursor: pointer;
           span{
             color: white;
           }
@@ -701,6 +702,7 @@ nav{
         .like:hover{
           background-color: $redColorHead;
           color: white;
+          cursor: pointer;
         }
         .like:before{
           content: "\2661";
